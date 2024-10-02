@@ -1,0 +1,34 @@
+generator client {
+  provider="prisma-client-js"
+}
+
+datasource db {
+  provider="mongodb"
+  url=env("DATABASE_URL")
+}
+
+// datasource db {
+//   provider = "sqlite"
+//   url      = "file:./dev.db"
+// }
+
+model User {
+  id              String   @id @default(auto()) @map("_id") @db.ObjectId
+  email           String   @unique
+  passwordHash    String
+  firstName       String?
+  lastName        String?
+  phone           String?
+  profilePicture  String?
+  locale          String?
+  country         String?
+  permissions     String?
+  subscription    String?
+  dateCreated     DateTime @default(now())
+  lastModified    DateTime @updatedAt @default(now())
+}
+
+model Test {
+  id              String   @id @default(auto()) @map("_id") @db.ObjectId
+  someData        String   @unique
+}
