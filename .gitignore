@@ -1,5 +1,1 @@
-node_modules
-.env
-prisma/dev.db
-dist
-build
+/node_modules
