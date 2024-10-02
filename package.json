@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node dist/server.js",
+    "start": "node build/server.js",
     "dev": "nodemon -r tsconfig-paths/register --watch ./**/*.ts --exec ts-node server.ts",
     "build": "tsc",
     "seed": "npx ts-node ./prisma/seeds/all.ts",

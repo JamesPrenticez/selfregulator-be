@@ -32,8 +32,6 @@ app.set("json spaces", 2);
 // Serve static files from the "public" directory
 app.use(express.static(path.join(__dirname, "public")));
 
-
-
 // Serve swagger api docs
 app.use("/swagger", swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
