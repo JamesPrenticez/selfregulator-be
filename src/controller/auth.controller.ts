@@ -58,7 +58,7 @@ export class LoginController {
                 this.jwtKey
               );
               ok({
-                token: token
+                token
               });
             } else {
               fail(new UnauthorizedError('Password do not match'));

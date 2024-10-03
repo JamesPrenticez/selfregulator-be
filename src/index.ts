@@ -57,7 +57,7 @@ logger.stream = {
   write: (message: any, encoding: any) => {
     logger.log({
       level: 'info',
-      message: message
+      message
     });
   }
 };
@@ -71,7 +71,7 @@ const app = createExpressServer({
     }
   },
   authorizationChecker: async (action: Action) => {
-    const token = action.request.headers['authorization'];
+    const token = action.request.headers.authorization;
     let check: boolean;
     jwt.verify(token, jwtKey, (error: any, sucess: any) => {
       if (error) {
@@ -83,7 +83,7 @@ const app = createExpressServer({
     return check;
   },
   currentUserChecker: async (action: Action) => {
-    const token = action.request.headers['authorization'];
+    const token = action.request.headers.authorization;
     const check = confirmUser(token);
     return check;
   },
